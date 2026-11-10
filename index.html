@@ -144,7 +144,7 @@ th,td{border:1px solid var(--ink);padding:8px 10px;text-align:left}th{font:400 1
 
 <div class="sh" id="consiliu"><h2>Consiliul de administrație</h2></div>
 <div class="two">
-<div class="bx r"><h3>Echipa MANN CO · noi</h3><table><tr><td>Gogu Vasile - Director General</td></tr><tr><td>Lates Iasmina - Manager</td></tr><tr><td>Adrisoare Denisa - Contabil</td></tr><tr><td>Airinei Denis - Angajat</td></tr><tr><td>Pralea Maria - Angajat</td></tr></table></div>
+<div class="bx r"><h3>Echipa MANN CO · noi</h3><table><tr><td>Gogu Vasile - Director General</td></tr><tr><td>Lates Iasmina - Manager</td></tr><tr><td>Andrisoae Denisa - Contabil</td></tr><tr><td>Airinei Denis - Angajat</td></tr><tr><td>Pralea Maria - Angajat</td></tr></table></div>
 <div class="bx b"><h3>CONCURENTA · concurența noastră</h3><table><tr><td><img src="images/imagesdec.png" alt="Decathlon" style="width:25px;height:25px;object-fit:contain;vertical-align:middle;margin-right:8px;">Decathlon</td></tr><tr><td><img src="images/intersport.png" alt="Intersport" style="width:25px;height:25px;object-fit:contain;vertical-align:middle;margin-right:8px;">Intersport</td></tr><tr><td><img src="images/sportisimo.png" alt="Sportisimo" style="width:25px;height:25px;object-fit:contain;vertical-align:middle;margin-right:8px;">SPORTISIMO</td></tr><tr><td><img src="images/hervis.jpg" alt="Hervis Sport" style="width:25px;height:25px;object-fit:contain;vertical-align:middle;margin-right:8px;">Hervis Sport</td></tr></table></div>
 </div>
 
@@ -162,7 +162,24 @@ var wallet=150,ky=3,off=[],cat="a",ord=417;
 function $(i){return document.getElementById(i)}
 function lei(x){return x.toFixed(2).replace(".",",")+" lei"}
 function K(a,m,b){var d=document.createElement("div");d.className="tt";d.innerHTML='<small>TELEGRAMĂ</small><span class="r">'+a+'</span> '+m+(b?' <span class="bl">'+b+'</span>':'');$("toast").appendChild(d);setTimeout(function(){d.remove()},4300);while($("toast").children.length>3)$("toast").firstChild.remove()}
-function apply(){document.querySelectorAll(".img[data-k]").forEach(function(e){var v=store[e.dataset.k];if(v){e.style.backgroundImage="url("+v+")";e.classList.add("has")}else{e.style.backgroundImage="";e.classList.remove("has")}})}
+var IMAGINI = {
+  i0: "images/proteinsup.png",
+  i1: "images/proteinsup.png",
+  i2: "images/proteinsup.png"
+};
+
+function apply() {
+  document.querySelectorAll(".img[data-k]").forEach(function(e) {
+    var v = IMAGINI[e.dataset.k];
+    if (v) {
+      e.style.backgroundImage = "url('" + v + "')";
+      e.classList.add("has");
+    } else {
+      e.style.backgroundImage = "";
+      e.classList.remove("has");
+    }
+  });
+}
 function qc(i){return "--c:"+Q[S[i][1]][1]+"66"}
 function code(i){return "MC-"+(101+i)}
 function tipHtml(i){var x=S[i],k=Q[x[1]];return '<div class="nm" style="color:'+k[1]+'">'+k[0]+' '+x[0]+'</div><div class="lv">'+code(i)+' · Nivel '+(5+i*3)+' · '+lei(x[2])+'</div><div>'+D[i%D.length]+'</div>'}

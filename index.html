@@ -152,7 +152,7 @@ th,td{border:1px solid var(--ink);padding:8px 10px;text-align:left}th{font:400 1
 <input type="file" id="fi" accept="image/*" hidden>
 
 <script>
-var Q={u:["Neobișnuit","#8650ac"],s:["Ciudat","#cf6a32"],y:["Unic","#c9a100"],g:["Genuin","#4d7455"],v:["Vintage","#476291"],c:["De colecție","#aa0000"]};
+var Q={u:["","#8650ac"],s:["","#cf6a32"],y:["","#c9a100"],g:["","#4d7455"],v:["","#476291"],c:["","#aa0000"]};
 var S=[["Kitul de Start Sportiv","y",99,"k"],["Kitul Proteic Zilnic","g",79,"k"],["Batonul Proteic Atomic","g",9,"n"],["Shakerul Blindat","y",25,"e"],["Bidonul Mann 1 L","v",22,"e"],["Benzile Elastice de Rezistență","s",39,"e"],["Coarda de Sărit Industrială","y",29,"e"],["Prosopul de Antrenament","v",19,"x"],["Geanta Blindată de Sală","u",89,"x"],["Tricoul „Prea Puternic”","y",49,"x"],["Brățările de Încheietură","c",12,"x"],["Mănușile de Forță","s",35,"x"],["Gantera Reglabilă","u",79,"e"],["Mingea Antistres Urs","s",14,"x"],["Șapca Directorului","u",59,"x"],["Medalia Campionului","c",39,"x"],["Jurnalul de Antrenament","s",15,"e"],["Pachetul de Gustări Sportive","g",29,"n"]];
 var C=[["a","Toate"],["n","Nutriție"],["e","Echipament"],["x","Accesorii"],["k","Kituri"]];
 var D=["Rezistă la <i>sudoare, ghiozdane și urși</i>.","Efect special: <i>aer de campion</i>.","+100% energie înainte de antrenament.","Un singur scop: <i>să te țină în mișcare</i>.","Include <i>tupeu garantat</i>.","Prea puternic pentru echipament obișnuit."];
@@ -183,7 +183,7 @@ $("au").innerHTML=A.map(function(a,j){var x=S[a[0]];return '<div class="nt"><div
 $("au").addEventListener("click",function(e){var b=e.target.closest("button");if(b)K("RED","a licitat pentru",S[A[+b.dataset.a][0]][0])});
 var RF=[[8,34,50,7200],[15,12,40,19800],[3,48,60,90000]];
 $("raf").innerHTML=RF.map(function(r,j){var x=S[r[0]];return '<div class="nt"><div class="pic" style="'+qc(r[0])+'"><div class="img" data-k="i'+r[0]+'"></div><div class="lb">'+x[0]+'</div></div><h4>Tombolă: '+x[0]+'</h4><div class="m">Bilete vândute: '+r[1]+' / '+r[2]+'</div><div class="bar"><i style="width:'+(r[1]/r[2]*100)+'%"></i></div><div class="tm">Extragere în <b id="rt'+j+'"></b></div><button class="btn" data-r="'+j+'" type="button" style="font-size:17px">Intră în tombolă</button></div>'}).join("");
-$("raf").addEventListener("click",function(e){var b=e.target.closest("button");if(b)K("RED","a intrat în","tombolă")});
+$("raf").addEventListener("click",function(e){var b=e.target.closest("button");if(b)K("Utilizatorul 1","a intrat în","tombolă")});
 var t0=Date.now();
 function f(s){s=Math.max(0,s);var h=Math.floor(s/3600),m=Math.floor(s%3600/60),c=s%60;return (h<10?"0":"")+h+":"+(m<10?"0":"")+m+":"+(c<10?"0":"")+c}
 function tick(){var d=Math.floor((Date.now()-t0)/1000);A.forEach(function(a,j){$("at"+j).textContent=f(a[4]-d)});RF.forEach(function(r,j){$("rt"+j).textContent=f(r[3]-d)})}

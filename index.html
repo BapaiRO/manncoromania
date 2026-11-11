@@ -12,34 +12,6 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#d9ceb2;--paper2:#e4dac0;--desk:#1f1914}}
 :root[data-theme="dark"]{--paper:#d9ceb2;--paper2:#e4dac0;--desk:#1f1914}
 *{box-sizing:border-box}
-  <!-- "Intra pe site!" Overlay -->
-<div id="enter-overlay" onclick="enterSite()" style="position: fixed; inset: 0; background-color: #000000; color: #ffffff; display: flex; align-items: center; justify-content: center; z-index: 99999; cursor: pointer; transition: opacity 0.5s ease; font-family: monospace; font-size: 1.5rem; letter-spacing: 2px;">
-  [ Intra pe site ]
-</div>
-
-<audio id="bg-audio" loop>
-  <source src="Bubamara.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  function enterSite() {
-    const overlay = document.getElementById("enter-overlay");
-    const audio = document.getElementById("bg-audio");
-
-    // Set volume (0.0 = mute, 0.5 = 50%, 1.0 = 100%)
-    audio.volume = 0.2; 
-
-    // Start the audio
-    audio.play();
-
-    // Fade out the overlay and remove it
-    overlay.style.opacity = "0";
-    setTimeout(() => {
-      overlay.style.display = "none";
-    }, 500);
-  }
-</script>
-
 html{scroll-behavior:smooth}
 body{margin:0;padding:16px 12px 40px;background:radial-gradient(#0000002a 1px,transparent 1.5px) 0 0/7px 7px,var(--desk);color:var(--ink);font:400 15px/1.6 var(--se)}
 .sheet{max-width:1560px;margin:0 auto;background:var(--paper);padding:14px;position:relative;box-shadow:0 0 0 1px #0006}
